@@ -2,7 +2,7 @@ const webpack= require('webpack');
 const path = require('path')
 
 module.exports = {
-    mode: 'development',
+    mode: 'production',
     entry: {
         app: './src/app.jsx'
     },
@@ -51,6 +51,7 @@ module.exports = {
         static: path.resolve(__dirname, 'static'),
         historyApiFallback: true,
         hot:true,
+        allowedHosts:'all',
         proxy: {
             '/api/*': {
                 target: 'http://localhost:3000',
